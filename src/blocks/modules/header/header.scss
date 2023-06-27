@@ -1,12 +1,13 @@
 .header {
   background-color: #131313; 
+  padding: 28px 0;
 }
 
 .header__wrapper {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-
+  flex-wrap: wrap;
 }
 
 .header__phone-btn {
@@ -37,9 +38,10 @@
     cursor: pointer;
   }
 }
+
 .header__phone-btn-wrapper {
   position: relative;
-  margin: 0 5px;
+  margin-right: 15px;
   height: max-content;
   opacity: .4;
   transition: all .5s ease;
@@ -61,6 +63,7 @@
     opacity: inherit;
   }
 }
+
 .header__phone-btn--skewed {
   position: relative;
   z-index: 1;
@@ -73,7 +76,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    transform: skew(-20deg, 0);
+    transform: skew(-17deg, 0);
     transition: all .2s linear;
   }
   
@@ -99,8 +102,62 @@
 .header__contacts {
   display: flex;
   align-items: center;
+  margin-left: auto;
 }
 
 .header__logo {
-  margin-right: 34px;
+  width: 156px;
+  margin-right: 76px;
+  flex-shrink: 0;
+
+  @include media-M {
+    flex-direction: column;
+    gap: 15px;
+    margin-right: 0; 
+  }
+
+  @include media-XS {
+    width: 112px;
+  }
+}
+
+.header__menu-btn {
+  display: none;
+  z-index: 999;
+  position: relative;
+  padding: 0;
+  margin-right: 25px;
+
+  width: 30px;
+  background: none;
+  border: none;
+
+  @include media-M {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-between;
+  }
+
+  &-line {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 10px;
+
+    &--1 {
+      width: 50%;
+    }
+
+    &--3 {
+      width: 75%;
+    }
+  }
+}
+
+
+.header__menu-btn:hover {
+  cursor: pointer;
+  opacity: .6;
 }
