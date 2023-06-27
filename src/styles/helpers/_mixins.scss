@@ -1,0 +1,35 @@
+@mixin media-XS {
+  @media (max-width: $mediaWidth-XS) {
+    @content;
+  }
+}
+
+@mixin media-S {
+  @media (max-width: $mediaWidth-S) {
+    @content;
+  }
+}
+
+@mixin media-M {
+  @media (max-width: $mediaWidth-M) {
+    @content;
+  }
+}
+
+@mixin media-L {
+  @media (max-width: $mediaWidth-L) {
+    @content;
+  }
+}
+
+@mixin media-XL {
+  @media (max-width: $mediaWidth-XL) {
+    @content;
+  }
+}
+
+@mixin media-custom($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}

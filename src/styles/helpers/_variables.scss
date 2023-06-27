@@ -1,2 +1,24 @@
+// Desktop first
+
+// Устройства X-Small (портретные телефоны, менее 576 пикселей)
+$mediaWidth-XS: 575.98px;
+// Устройства Small (телефоны с горизонтальной ориентацией, менее 768 пикселей)
+$mediaWidth-S: 767.98px;
+// Устройства Medium (планшеты, менее 992 пикселей)
+$mediaWidth-M: 991.98px;
+// Устройства Large (настольные компьютеры, менее 1200 пикселей)
+$mediaWidth-L: 1199.98px;
+// Устройства X-Large (большие настольные компьютеры, менее 1400 пикселей)
+$mediaWidth-XL: 1399.98px;
+// Устройства XX-Large (большие настольные компьютеры)
+// Нет медиа-запроса, так как контрольная точка xxl не имеет верхней границы ширины
+
+// fonts
+$font-title: 'Montserrat', sans-serif;
+$font: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
+$font-color: #f4f4f4;
+
+// colors
 $accent-color: #c2ab81;
 $btn-hover-effect: #918368;
+$bg-color: #181818;
