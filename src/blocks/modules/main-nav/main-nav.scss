@@ -1,0 +1,21 @@
+.main-nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__list-item {
+    margin-right: 42px;
+    margin-bottom: .25em;
+    margin-top: .25em;
+  }
+  &__link {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
