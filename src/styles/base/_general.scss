@@ -4,14 +4,14 @@ h1, h2, h3, h4, h5, h6, ul {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: $font;
+    color: $font-color;
     font-size: 16px;
     line-height: 1.5;
 }
 
 .container-fluid {
-    width: 100%;
-    max-width: 1720px;
+    width: 1720px;
     margin: 0 auto;
     padding: 0px 100px;
 }
