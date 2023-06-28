@@ -1,0 +1,33 @@
+.main-screen {
+  display: flex;
+  min-height: 960px;
+  padding-bottom: 95px;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  background-repeat: no-repeat;
+  background-image: url(../../../img/mask-main-bg.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.main-screen__content {
+  max-width: 686px;
+  margin-top: auto;
+  margin-right: auto;
+}
+
+.main-screen__title {
+  font-size: 42px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.main-screen__text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  margin-bottom: 40px;
+  color: #cdcdcd;
+}

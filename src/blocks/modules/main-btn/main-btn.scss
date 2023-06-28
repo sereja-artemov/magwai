@@ -1,4 +1,4 @@
-.btn__item {
+.main-btn__item {
   -webkit-appearance: none;
   margin: 0;
   padding: 0;
@@ -30,7 +30,7 @@
  * --------------------------------------------------
  */
 
-.btn__item--primary {
+.main-btn__item--primary {
   height: 60px;
   padding: 21px 69px;
   color: #fff;
@@ -59,7 +59,7 @@
  * Modifier: Skewed
  * --------------------------------------------------
  */
-.btn {
+.main-btn {
   position: relative;
   width: fit-content;
   height: max-content;
@@ -76,10 +76,6 @@
     height: 100%;
     background-color: #fff;
     transform: skew(-17deg, 0);
-
-    @include media-XS {
-      display: none;
-    }
   }
 
   @include media-XS {
@@ -87,7 +83,7 @@
     margin: 0 10px;
   }
 }
-.btn__item--skewed {
+.main-btn__item--skewed {
   position: relative;
   z-index: 1;
   
