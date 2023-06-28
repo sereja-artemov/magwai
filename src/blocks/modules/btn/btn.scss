@@ -37,6 +37,21 @@
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
+
+  @include media-XL {
+    padding: 21px 35px;
+  }
+
+  @include media-M {
+    padding: 21px 15px;
+    min-width: 201px;
+  }
+  
+  @include media-XS {
+    padding: 21px 15px;
+    min-width: 201px;
+    width: 100%;
+  }
 }
 
 /**
@@ -46,7 +61,7 @@
  */
 .btn {
   position: relative;
-  margin: 0 18px;
+  margin-right: 19px;
   height: max-content;
   
   &::after {
@@ -59,6 +74,15 @@
     height: 100%;
     background-color: #fff;
     transform: skew(-17deg, 0);
+
+    @include media-XS {
+      display: none;
+    }
+  }
+
+  @include media-XS {
+    width: 100%;
+    margin: 0 10px;
   }
 }
 .btn__item--skewed {

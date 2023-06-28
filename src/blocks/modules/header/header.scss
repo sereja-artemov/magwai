@@ -1,13 +1,24 @@
 .header {
   background-color: #131313; 
   padding: 28px 0;
+
+  @include media-XS {
+    padding: 20px 0;
+  }
 }
 
 .header__wrapper {
-  position: relative;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  gap: 20px;
+
+  @include media-L {
+    flex-wrap: wrap;
+  }
+
+  @include media-M {
+    justify-content: space-between;
+  }
 }
 
 .header__phone-btn {
@@ -28,6 +39,10 @@
   width: 75px;
   height: 60px;
 
+  @include media-XS {
+    width: 100%;
+  }
+
   &:hover,
   &:focus {
     outline: none;
@@ -41,7 +56,7 @@
 
 .header__phone-btn-wrapper {
   position: relative;
-  margin-right: 15px;
+  margin-right: 33px;
   height: max-content;
   opacity: .4;
   transition: all .5s ease;
@@ -61,6 +76,18 @@
     top: 50%;
     transform: translate(-50%, -50%);
     opacity: inherit;
+  }
+  
+  @include media-XL {
+    margin-right: 12px;
+  }
+
+  @include media-M {
+    margin: 0 10px;
+  }
+
+  @include media-XS {
+    width: 100%;
   }
 }
 
@@ -103,11 +130,33 @@
   display: flex;
   align-items: center;
   margin-left: auto;
+  flex-shrink: 0;
+
+  @include media-M {
+    margin-left: 0;
+  }
+
+  @include media-XS {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    max-width: 330px;
+    padding: 0 28px;
+  }
+
+  &--active {
+    display: flex !important;
+  }
 }
 
 .header__logo {
   width: 156px;
-  margin-right: 76px;
+  margin-right: 56px;
   flex-shrink: 0;
 
   @include media-M {
@@ -137,6 +186,7 @@
     flex-direction: column;
     gap: 5px;
     justify-content: space-between;
+    margin-right: 0;
   }
 
   &-line {

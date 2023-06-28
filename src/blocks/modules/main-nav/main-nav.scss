@@ -42,18 +42,26 @@
       color: $accent-color;
 
     }
+
     @include media-M {
       font-size: 36px;
-      -webkit-text-stroke-width: .5px;
-      -webkit-text-stroke-color: #fff;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #808080;
       -webkit-text-fill-color: transparent;
       
+    }
+
+    @include media-XS {
+      font-size: 20px;
+      -webkit-text-stroke-width: .5px;      
     }
   }
 
   @include media-M {
+    display: none;
     box-sizing: border-box;
-    position: absolute;
+    position: fixed;
+    overflow: scroll;
     top: 110px;
     background-color: inherit;
     width: 100vw;
@@ -61,4 +69,22 @@
     height: 100vh;
     padding: 60px 50px;
   }
+
+  @include media-XS {
+    box-sizing: border-box;
+    position: fixed;
+    overflow: scroll;
+    top: 90px;
+    background-color: inherit;
+    width: 100vw;
+    left: 0;
+    height: 55vh;
+    padding: 0 18px;
+    padding-bottom: 50px;
+  }
+
+}
+
+.main-nav--active {
+  display: block !important;
 }
