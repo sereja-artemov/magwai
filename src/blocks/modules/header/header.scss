@@ -135,6 +135,7 @@
   background-color: inherit;
 
   @include media-M {
+    z-index: 99999;
     margin-left: 0;
   }
 
