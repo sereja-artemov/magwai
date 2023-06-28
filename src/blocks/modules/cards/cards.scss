@@ -1,3 +1,9 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
 .cards {
   padding-top: 134px;
   padding-bottom: 256px;
@@ -57,6 +63,9 @@
 }
 
 .card__text-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   padding: 25px 24px 30px 24px;
   background-color: #fff;
   color: $font-color-dark;
@@ -120,6 +129,7 @@
   text-decoration: none;
   width: 100%;
   background-color: #171717;
+  margin-top: auto;
   
   color: #FFF;
   font-size: 14px;
