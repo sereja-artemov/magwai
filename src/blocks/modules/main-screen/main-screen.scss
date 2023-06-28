@@ -17,6 +17,8 @@
   @include media-XS {
     min-height: 495px;
     padding-bottom: 52px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
   }
 }
 
