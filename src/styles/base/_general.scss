@@ -52,14 +52,17 @@ img {
   width: 100%;
   max-width: 2560px;
   margin: 0 auto;
-  padding: 0px 100px;
+  padding-left: 100px;
+  padding-right: 100px;
 
   @include media-M {
-    padding: 0 50px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   @include media-S {
-    padding: 0 15px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
