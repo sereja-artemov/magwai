@@ -2,8 +2,8 @@
 
 let limit = 30;
 let loadMoreBtn = document.querySelector(".main-btn__load-more");
-let visibleCards = 4;
-let startCards = 4;
+let visibleCards = 5;
+let startCards = 5;
 
 function getCardsData() {
     fetch(`https://jsonplaceholder.typicode.com/posts?_page=1&_limit=${limit}`)
@@ -39,7 +39,7 @@ function initCards() {
 
 function loadMoreCards() {
     const allCards = JSON.parse(localStorage.getItem('cards'));
-    const cardsToLoad = allCards.slice(visibleCards, visibleCards + 4); // Выбираем следующие 4 карточки из списка
+    const cardsToLoad = allCards.slice(visibleCards, visibleCards + 5); // Выбираем следующие 5 карточек из списка
     
     // Создаем DOM-элементы для новых карточек и добавляем их в контейнер
     cardsToLoad.forEach(cardItem => {
