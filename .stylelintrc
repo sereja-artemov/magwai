@@ -6,7 +6,8 @@
         "stylelint-selector-bem-pattern"
     ],
     "rules": {
-        "indentation": 4,
+        "indentation": 2,
+        selector-class-pattern: null,
         "plugin/selector-bem-pattern": [
             {
                 "implicitComponents": true,

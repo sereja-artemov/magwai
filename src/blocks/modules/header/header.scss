@@ -1,18 +1,13 @@
 .header {
-  background-color: #131313; 
-  padding: 28px 0;
-
   @include media-XS {
     padding: 20px 0;
   }
+
+  background-color: #131313;
+  padding: 28px 0;
 }
 
 .header__wrapper {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background-color: inherit;
-
   @include media-L {
     flex-wrap: wrap;
   }
@@ -20,65 +15,46 @@
   @include media-M {
     justify-content: space-between;
   }
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: inherit;
 }
 
 .header__phone-btn {
-  -webkit-appearance: none;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: none;
-  overflow: visible;
-  color: inherit;
-  font: inherit;
-  text-transform: none;
-  display: inline-block;
-  vertical-align: middle;
-  text-decoration: none;
-  text-align: center;
-  user-select: none;
-  width: 75px;
-  height: 60px;
-
   @include media-XS {
     width: 100%;
   }
 
-  &:hover,
-  &:focus {
+  display: inline-block;
+  width: 75px;
+  height: 60px;
+  overflow: visible;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  appearance: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-transform: none;
+  vertical-align: middle;
+  text-decoration: none;
+  text-align: center;
+  user-select: none;
+
+  &:hover, &:focus {
     outline: none;
     text-decoration: none;
   }
-  
+
   &:not(:disabled) {
     cursor: pointer;
   }
 }
 
 .header__phone-btn-wrapper {
-  position: relative;
-  margin-right: 23px;
-  height: max-content;
-  opacity: .4;
-  transition: all .5s ease;
-
-  &:hover {
-    opacity: .9;
-  }
-
-  &::after {
-    position: absolute;
-    content: "";
-    width: 20px;
-    height: 20px;
-    background-image: url('../../../img/phone-icon.svg');
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    opacity: inherit;
-  }
-  
   @include media-XL {
     margin-right: 12px;
   }
@@ -90,50 +66,65 @@
   @include media-XS {
     width: 100%;
   }
+
+  position: relative;
+  margin-right: 23px;
+  height: max-content;
+  opacity: 0.4;
+  transition: all 0.5s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    background-image: url("../../../img/phone-icon.svg");
+    opacity: inherit;
+  }
 }
 
 .header__phone-btn--skewed {
   position: relative;
   z-index: 1;
-  
-  &:before,
-  &:after {
+
+  &::before, &::after {
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
+    left: 0;
     transform: skew(-17deg, 0);
-    transition: all .2s linear;
+    transition: all 0.2s linear;
   }
-  
-  &:before {
+
+  &::before {
     background-color: transparent;
     z-index: -2;
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid rgb(255 255 255);
   }
-  
-  &:after {
-    background-color: rgb(255, 255, 255, .1);;
+
+  &::after {
+    background-color: rgb(255 255 255 / 10%);
     z-index: -1;
     right: 100%;
   }
-  
+
   &:hover {
-    &:after {
+    &::after {
       right: 0;
     }
   }
 }
 
 .header__contacts {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  flex-shrink: 0;
-  background-color: inherit;
-
   @include media-M {
     z-index: 99999;
     margin-left: 0;
@@ -141,16 +132,22 @@
 
   @include media-XS {
     display: none;
+    flex-direction: column;
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
-    flex-direction: column;
-    gap: 6px;
     width: 100%;
     max-width: 330px;
     padding: 20px 28px;
+    transform: translateX(-50%);
+    gap: 6px;
   }
+
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  margin-left: auto;
+  background-color: inherit;
 
   &--active {
     display: flex !important;
@@ -158,32 +155,22 @@
 }
 
 .header__logo {
-  width: 156px;
-  margin-right: 56px;
-  flex-shrink: 0;
-
   @include media-M {
     flex-direction: column;
     gap: 15px;
-    margin-right: 0; 
+    margin-right: 0;
   }
 
   @include media-XS {
     width: 112px;
   }
+
+  flex-shrink: 0;
+  width: 156px;
+  margin-right: 56px;
 }
 
 .header__menu-btn {
-  display: none;
-  z-index: 999;
-  position: relative;
-  padding: 0;
-  margin-right: 25px;
-
-  width: 30px;
-  background: none;
-  border: none;
-
   @include media-M {
     display: flex;
     flex-direction: column;
@@ -191,6 +178,15 @@
     justify-content: space-between;
     margin-right: 0;
   }
+
+  display: none;
+  position: relative;
+  z-index: 999;
+  width: 30px;
+  border: none;
+  padding: 0;
+  margin-right: 25px;
+  background: none;
 
   &-line {
     display: block;
@@ -209,8 +205,7 @@
   }
 }
 
-
 .header__menu-btn:hover {
   cursor: pointer;
-  opacity: .6;
+  opacity: 0.6;
 }

@@ -5,9 +5,6 @@
 }
 
 .cards {
-  padding-top: 134px;
-  padding-bottom: 256px;
-
   @include media-M {
     padding-top: 44px;
     padding-bottom: 156px;
@@ -17,13 +14,12 @@
     padding-top: 48px;
     padding-bottom: 43px;
   }
+
+  padding-top: 134px;
+  padding-bottom: 256px;
 }
 
 .cards__title {
-  margin: 0;
-  font-size: 42px;
-  margin-bottom: 53px;
-
   @include media-M {
     margin-bottom: 40px;
   }
@@ -32,6 +28,10 @@
     font-size: 20px;
     margin-bottom: 30px;
   }
+
+  margin: 0;
+  font-size: 42px;
+  margin-bottom: 53px;
 }
 
 .card__image-link {
@@ -41,14 +41,6 @@
 }
 
 .cards__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px,1fr));
-  gap: 30px;
-  margin-bottom: 60px;
-
   @include media-M {
     gap: 20px;
   }
@@ -58,29 +50,37 @@
   }
 
   @include media-custom(375px) {
-    grid-template-columns: repeat(auto-fill, minmax(240px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   }
+
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
 }
 
 .card__text-content {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 25px 24px 30px 24px;
-  background-color: #fff;
-  color: $font-color-dark;
-
   @include media-M {
     padding: 30px 25px;
   }
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 25px 24px 30px;
+  background-color: #fff;
+  color: $font-color-dark;
 }
 
 .card__category {
   margin: 0;
-  font-family: 'Mulish', sans-serif;
+  font-family: Mulish, sans-serif;
   font-size: 14px;
   line-height: 26px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 20px;
@@ -101,16 +101,16 @@
 }
 
 .card__description {
+  display: box;
+  overflow: hidden;
   margin: 0;
   margin-bottom: 20px;
   font-size: 14px;
   line-height: 24px;
   color: #666;
-  display: -webkit-box;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
 }
 
 .card__author {
@@ -123,19 +123,18 @@
 
 .card__btn {
   display: inline-block;
+  width: 100%;
   margin: 0 auto;
+  margin-top: auto;
   padding: 15px 26px;
+  font-family: Mulish, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
   text-align: center;
   text-decoration: none;
-  width: 100%;
   background-color: #171717;
-  margin-top: auto;
-  
-  color: #FFF;
-  font-size: 14px;
-  font-family: 'Mulish', sans-serif;
-  font-weight: 600;
-  transition: all .4s ease-out;
+  transition: all 0.4s ease-out;
 
   &:hover {
     background-color: $accent-color;
