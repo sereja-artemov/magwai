@@ -1,0 +1,21 @@
+<div class="modal-content">
+  <button class="modal-content__close" type="button" title="Закрыть">Закрыть</button>
+  <h2 class="modal-content__title">Оставить заявку</h2>
+  <p class="modal-content__descr">Заполните форму и получайте инсайды напрямую от Илона Макса</p>
+  <form class="question-form" action="#" method="post">
+    <fieldset class="question-form__main-fileds">
+      <input type="text" class="question-form__field question-form__name" name="name" placeholder="Имя">
+      <input type="email" class="question-form__field question-form__email" name="email" placeholder="Email">
+      <input type="tel" class="question-form__field question-form__tel" name="tel" placeholder="Номер телефона">
+    </fieldset>
+    <label class="question-form__label question-form__moms-checkbox">
+      <input type="checkbox" name="moms-money">
+      <span class="question-form__label-indicator"></span>
+      Я не буду инвестировать деньги со школьных обедов
+    </label>
+    <div class="main-btn modal-content__btn" data-type="question">
+      <button class="main-btn__item main-btn__item--primary main-btn__item--skewed" type="submit">Отправить</button>
+    </div>
+  </form>
+</div>
+<div class="overlay"></div>
