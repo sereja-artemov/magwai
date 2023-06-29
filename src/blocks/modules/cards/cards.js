@@ -90,21 +90,12 @@ class Card {
 
     generateCard() {
         this._element = this._getTemplate();
-        this._element.querySelector(".card__image").src = this._image || "../../../img/post-img.png";
+        this._element.querySelector(".card__image").src = this._image || "./img/post-img.png";
         this._element.querySelector(".card__title").textContent = this._title;
         this._element.querySelector(".card__description").textContent = this._body;
 
         return this._element;
     }
-}
-
-function appendCards(data) {
-    data.forEach((item) => {
-        const card = new Card(item, ".cards__card-template");
-        const cardElement = card.generateCard();
-
-        document.querySelector(".cards__list").append(cardElement);
-    });
 }
 
 loadMoreBtn.addEventListener("click", loadMoreCards);
