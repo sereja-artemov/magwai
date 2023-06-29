@@ -1,5 +1,8 @@
 # Тестовое задание на Frontend-разработчика в Магвай
 
+![screencapture-localhost-4000-2023-06-29-21_29_03](https://github.com/sereja-artemov/magwai/assets/97092702/cbb6411b-a2e3-41cf-9842-e7945c3a32c4)
+
+
 ## :hammer_and_wrench: Установка
 
 - установите [NodeJS](https://nodejs.org/en/)
