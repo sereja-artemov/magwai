@@ -5,6 +5,18 @@ let loadMoreBtn = document.querySelector(".main-btn__load-more");
 let visibleCards = 5;
 let startCards = 5;
 
+if (window.innerWidth < 1920) {
+    startCards = 4;
+}
+
+if (window.innerWidth < 1570) {
+    startCards = 3;
+}
+
+if (window.innerWidth < 1220) {
+    startCards = 2;
+}
+
 function getCardsData() {
     fetch(`https://jsonplaceholder.typicode.com/posts?_page=1&_limit=${limit}`)
         .then((res) => {
@@ -39,7 +51,7 @@ function initCards() {
 
 function loadMoreCards() {
     const allCards = JSON.parse(localStorage.getItem('cards'));
-    const cardsToLoad = allCards.slice(visibleCards, visibleCards + 5); // Выбираем следующие 5 карточек из списка
+    const cardsToLoad = allCards.slice(visibleCards, visibleCards + startCards); // Выбираем следующие карточки
     
     // Создаем DOM-элементы для новых карточек и добавляем их в контейнер
     cardsToLoad.forEach(cardItem => {
@@ -49,7 +61,7 @@ function loadMoreCards() {
         document.querySelector(".cards__list").append(cardElement);
     });
     
-    visibleCards += 4; // Увеличиваем счетчик видимых карточек
+    visibleCards += startCards; // Увеличиваем счетчик видимых карточек
     
     // Проверка, показывать ли кнопку "Загрузить еще" или скрывать
     if (visibleCards >= allCards.length) {
