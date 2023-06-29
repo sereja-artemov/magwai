@@ -49,6 +49,10 @@
 
 .btn {
   @include media-XS {
+    padding-left: 6px;
+  }
+
+  @include media-XS {
     width: 100%;
     margin: 0 10px;
   }
@@ -56,7 +60,6 @@
   position: relative;
   width: fit-content;
   height: max-content;
-  margin-right: 19px;
   padding-left: 10px;
 
   &::after {

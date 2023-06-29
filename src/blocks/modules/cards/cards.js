@@ -26,7 +26,7 @@ function getCardsData() {
             return res.json();
         })
         .then((data) => {
-            localStorage.setItem('cards', JSON.stringify(data));
+            localStorage.setItem("cards", JSON.stringify(data));
             initCards();
         })
         .catch((err) => {
@@ -37,7 +37,7 @@ function getCardsData() {
 getCardsData();
 
 function initCards() {
-    const allCards = JSON.parse(localStorage.getItem('cards'));
+    const allCards = JSON.parse(localStorage.getItem("cards"));
     const cardsToLoad = allCards.slice(0, startCards); 
 
     // Создаем DOM-элементы для новых карточек и добавляем их в контейнер
@@ -50,7 +50,7 @@ function initCards() {
 }
 
 function loadMoreCards() {
-    const allCards = JSON.parse(localStorage.getItem('cards'));
+    const allCards = JSON.parse(localStorage.getItem("cards"));
     const cardsToLoad = allCards.slice(visibleCards, visibleCards + startCards); // Выбираем следующие карточки
     
     // Создаем DOM-элементы для новых карточек и добавляем их в контейнер

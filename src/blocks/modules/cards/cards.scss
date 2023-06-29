@@ -15,7 +15,7 @@
     padding-bottom: 43px;
   }
 
-  padding-top: 134px;
+  padding-top: 128px;
   padding-bottom: 256px;
 }
 
@@ -30,8 +30,9 @@
   }
 
   margin: 0;
+  margin-bottom: 46px;
   font-size: 42px;
-  margin-bottom: 53px;
+  text-transform: uppercase;
 }
 
 .card__image-link {
@@ -54,8 +55,6 @@
   }
 
   display: grid;
-  margin: 0;
-  padding: 0;
   list-style: none;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 30px;
