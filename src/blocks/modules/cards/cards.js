@@ -2,6 +2,8 @@
 
 let limit = 30;
 let loadMoreBtn = document.querySelector(".main-btn__load-more");
+let visibleCards = 4;
+let startCards = 4;
 
 function getCardsData() {
     fetch(`https://jsonplaceholder.typicode.com/posts?_page=1&_limit=${limit}`)
@@ -12,7 +14,8 @@ function getCardsData() {
             return res.json();
         })
         .then((data) => {
-            appendCards(data);
+            localStorage.setItem('cards', JSON.stringify(data));
+            initCards();
         })
         .catch((err) => {
             console.log(err);
@@ -20,6 +23,40 @@ function getCardsData() {
 }
 
 getCardsData();
+
+function initCards() {
+    const allCards = JSON.parse(localStorage.getItem('cards'));
+    const cardsToLoad = allCards.slice(0, startCards); 
+
+    // Создаем DOM-элементы для новых карточек и добавляем их в контейнер
+    cardsToLoad.forEach(cardItem => {
+        const card = new Card(cardItem, ".cards__card-template");
+        const cardElement = card.generateCard();
+
+        document.querySelector(".cards__list").append(cardElement);
+    });
+}
+
+function loadMoreCards() {
+    const allCards = JSON.parse(localStorage.getItem('cards'));
+    const cardsToLoad = allCards.slice(visibleCards, visibleCards + 4); // Выбираем следующие 4 карточки из списка
+    
+    // Создаем DOM-элементы для новых карточек и добавляем их в контейнер
+    cardsToLoad.forEach(cardItem => {
+        const card = new Card(cardItem, ".cards__card-template");
+        const cardElement = card.generateCard();
+
+        document.querySelector(".cards__list").append(cardElement);
+    });
+    
+    visibleCards += 4; // Увеличиваем счетчик видимых карточек
+    
+    // Проверка, показывать ли кнопку "Загрузить еще" или скрывать
+    if (visibleCards >= allCards.length) {
+        loadMoreBtn.style.display = "none";
+    }
+}
+
 
 class Card {
     constructor(data, cardSelector) {
@@ -58,6 +95,4 @@ function appendCards(data) {
     });
 }
 
-loadMoreBtn.addEventListener("click", () => {
-    getCardsData();
-});
+loadMoreBtn.addEventListener("click", loadMoreCards);
