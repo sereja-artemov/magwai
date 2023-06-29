@@ -141,3 +141,22 @@
   margin-right: auto;
   margin-top: 20px;
 }
+
+.modal-content__message {
+  color: #e93131;
+}
+
+.field-error {
+  border-bottom: 1px solid #e93131;
+  
+  &:focus {
+    border-bottom: 1px solid #e93131;
+  }
+  &::placeholder {
+    color: #e93131;
+  }
+}
+
+.errorColor {
+  color: #e93131;
+}
